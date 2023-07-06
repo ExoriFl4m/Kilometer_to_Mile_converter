@@ -24,8 +24,8 @@ my_label.grid(column=0, row=1)
 my_label2 = Label(text="Miles", font=("Arial", 14))
 my_label2.grid(column=2, row=0)
 
-# Label - Km
-my_label3 = Label(text="Km", font=("Arial", 14))
+# Label - Kilometers
+my_label3 = Label(text="Kilometers", font=("Arial", 14))
 my_label3.grid(column=2, row=1)
 
 # Label - Output
