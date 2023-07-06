@@ -10,6 +10,15 @@ def button_clicked():
         miles = round(float(measure) / 1.609, 2)
         my_label4.config(text=miles)
 
+# Radio Button function to select Km's or Miles
+def radio_used():
+    if radio_state.get() == 1:
+        my_label3.grid(column=2, row=1)
+        my_label2.grid(column=2, row=0)
+    if radio_state.get() == 2:
+        my_label3.grid(column=2, row=0)
+        my_label2.grid(column=2, row=1)
+
 
 window = Tk()
 window.title("Measurement Converter")
@@ -36,16 +45,7 @@ my_label4.grid(column=1, row=1)
 button = Button(text="Calculate", command=button_clicked,font=("Arial", 14))
 button.grid(column=1, row=3)
 
-# Buttons to select Km's or Miles
-def radio_used():
-    if radio_state.get() == 1:
-        my_label3.grid(column=2, row=1)
-        my_label2.grid(column=2, row=0)
-    if radio_state.get() == 2:
-        my_label3.grid(column=2, row=0)
-        my_label2.grid(column=2, row=1)
-
-
+# Radio buttons
 radio_state = IntVar(value=1)    
 radiobutton1 = Radiobutton(text="Convert Miles to Kilometers.", value=1, variable=radio_state, command=radio_used)
 radiobutton2 = Radiobutton(text="Convert Kilometers to Miles.", value=2, variable=radio_state, command=radio_used)
