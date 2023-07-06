@@ -1,6 +1,6 @@
 from tkinter import *
 
-
+# Calculate button function
 def button_clicked():
     measure = measure_input.get()
     if radio_state.get() == 1:
