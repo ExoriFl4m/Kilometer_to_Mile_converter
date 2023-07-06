@@ -2,9 +2,13 @@ from tkinter import *
 
 
 def button_clicked():
-    miles = miles_input.get()
-    kilometers = int(miles) * 1.609
-    my_label4.config(text=kilometers)
+    measure = measure_input.get()
+    if radio_state.get() == 1:
+        kilometers = round(int(measure) * 1.609, 2)
+        my_label4.config(text=kilometers)
+    if radio_state.get() == 2:
+        miles = round(int(measure) / 1.609, 2)
+        my_label4.config(text=miles)
 
 
 window = Tk()
@@ -32,8 +36,24 @@ my_label4.grid(column=1, row=1)
 button = Button(text="Calculate", command=button_clicked,font=("Arial", 12, "bold"))
 button.grid(column=1, row=3)
 
+# Buttons to select Km's or Miles
+def radio_used():
+    if radio_state.get() == 1:
+        my_label3.grid(column=2, row=1)
+        my_label2.grid(column=2, row=0)
+    if radio_state.get() == 2:
+        my_label3.grid(column=2, row=0)
+        my_label2.grid(column=2, row=1)
+
+
+radio_state = IntVar(value=1)    
+radiobutton1 = Radiobutton(text="Convert Miles to Kilometers.", value=1, variable=radio_state, command=radio_used)
+radiobutton2 = Radiobutton(text="Convert Kilometers to Miles.", value=2, variable=radio_state, command=radio_used)
+radiobutton1.grid(column=1, row=4)
+radiobutton2.grid(column=1, row=5)
+
 # Entry - Input
-miles_input = Entry(width=7)
-miles_input.grid(column=1, row=0)
+measure_input = Entry(width=7)
+measure_input.grid(column=1, row=0)
 
 window.mainloop()
