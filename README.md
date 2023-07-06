@@ -1,3 +1,2 @@
-Mile to KM converter - Python.
-Functional but to be improved on in the future.
-First draft
+Measurement converter
+Convert miles to kilometers and vice versa (via radio buttons).
