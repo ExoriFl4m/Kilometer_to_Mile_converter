@@ -17,7 +17,7 @@ window.minsize(width=450, height=200)
 window.config(padx=100, pady=50)
 
 # Label - is equal to
-my_label = Label(text="is equal to", font=("Arial", 14, "bold"))
+my_label = Label(text="is equal to", font=("Arial", 14))
 my_label.grid(column=0, row=1)
 
 # Label - Miles
@@ -33,7 +33,7 @@ my_label4 = Label(text="0", font=("Arial", 14))
 my_label4.grid(column=1, row=1)
 
 # Button - Calculate
-button = Button(text="Calculate", command=button_clicked,font=("Arial", 14, "bold"))
+button = Button(text="Calculate", command=button_clicked,font=("Arial", 14))
 button.grid(column=1, row=3)
 
 # Buttons to select Km's or Miles
